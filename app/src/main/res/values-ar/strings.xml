@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Moatmer</string>
+    <string name="pray_time">وقت الصلاه </string>
+    <string name="join_us">انضم إلينا</string>
+    <string name="do_pray">أدي عمرتك</string>
+    <string name="with_muammar">مع معتمر </string>
+    <string name="azkar">"الأذكار "</string>
+    <string name="kabla">القبلة</string>
+    <string name="sebha">السبحة</string>
+</resources>

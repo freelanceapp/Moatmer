@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Moatmer</string>
+    <string name="pray_time">pray time</string>
+    <string name="join_us">join us</string>
+    <string name="do_pray">do pray</string>
+    <string name="with_muammar">With Muammar</string>
+    <string name="azkar">azkar</string>
+    <string name="kabla">kabla</string>
+    <string name="sebha">sebha</string>
+</resources>
