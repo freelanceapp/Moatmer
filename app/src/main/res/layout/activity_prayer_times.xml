@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="prayerTimes"
+            type="com.semicode.moatmer.data.model.prayerTimes.Timings" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,11 +32,30 @@
 
                 >
 
-                <ImageView
-                    android:id="@+id/prayer_times_iv_back"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_back" />
+
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/prayer_times_iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_back" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+
+                        android:gravity="center|start"
+                        android:text="@string/prayer_times"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp" />
+                </LinearLayout>
+
 
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -76,7 +99,8 @@
                         android:layout_weight="1"
                         android:text="@string/pray_time"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_13sdp" />
+                        android:textSize="@dimen/_13sdp"
+                        app:drawableStartCompat="@drawable/ic_location" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -152,16 +176,17 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/fajr"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
                     <TextView
+                        android:id="@+id/prayer_time_tv_fajr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.fajr}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -189,16 +214,17 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/sunrise"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
                     <TextView
+                        android:id="@+id/prayer_time_tv_sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.sunrise}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -226,7 +252,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/duhr"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -235,7 +261,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.dhuhr}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -263,7 +289,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/asr"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -272,7 +298,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.asr}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -300,7 +326,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/maghrib"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -309,7 +335,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.maghrib}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -337,7 +363,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="@string/pray_time"
+                        android:text="@string/isha"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -346,7 +372,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="05:11 ص"
+                        android:text="@{prayerTimes.isha}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 

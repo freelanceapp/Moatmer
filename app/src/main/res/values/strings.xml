@@ -7,4 +7,12 @@
     <string name="azkar">azkar</string>
     <string name="kabla">kabla</string>
     <string name="sebha">sebha</string>
+    <string name="fajr">Fajr</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="duhr">Duhr</string>
+    <string name="asr">Asr</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isha">Isha</string>
+    <string name="prayer_times">Prayer Times</string>
+
 </resources>

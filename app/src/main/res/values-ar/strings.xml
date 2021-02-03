@@ -7,4 +7,11 @@
     <string name="azkar">"الأذكار "</string>
     <string name="kabla">القبلة</string>
     <string name="sebha">السبحة</string>
+    <string name="fajr">الفجْر</string>
+    <string name="sunrise">"الشروق "</string>
+    <string name="duhr">الظُّهْر</string>
+    <string name="asr">العَصر</string>
+    <string name="maghrib">المَغرب</string>
+    <string name="isha">العِشاء</string>
+    <string name="prayer_times">مواقيت الصلاة</string>
 </resources>
