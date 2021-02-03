@@ -31,8 +31,20 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
     private void init() {
         binding.homeLayPrayerTime.setOnClickListener(v -> openPrayerActivity());
         binding.homeLaySebha.setOnClickListener(v -> openSebhaActivity());
+        binding.homeLayAzkar.setOnClickListener(v -> openAzkarActivity());
+        binding.homeLayKebla.setOnClickListener(v -> openKeblaActivity());
         presenter = new ActivityHomePresenter(this, this);
 
+    }
+
+    private void openKeblaActivity() {
+        Intent intent = new Intent(this, KeblaActivity.class);
+        startActivity(intent);
+    }
+
+    private void openAzkarActivity() {
+        Intent intent = new Intent(this, AzkarActivity.class);
+        startActivity(intent);
     }
 
     private void openPrayerActivity() {

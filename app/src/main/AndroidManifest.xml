@@ -28,6 +28,8 @@
         <activity android:name=".ui.HomeActivity"/>
         <activity android:name=".ui.PrayerTimesActivity"/>
         <activity android:name=".ui.SebhaActivity"/>
+        <activity android:name=".ui.AzkarActivity"/>
+        <activity android:name=".ui.KeblaActivity"/>
 
     </application>
 

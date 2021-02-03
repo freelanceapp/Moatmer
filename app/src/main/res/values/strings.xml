@@ -5,7 +5,6 @@
     <string name="do_pray">do pray</string>
     <string name="with_muammar">With Muammar</string>
     <string name="azkar">azkar</string>
-    <string name="kabla">kabla</string>
     <string name="sebha">sebha</string>
     <string name="fajr">Fajr</string>
     <string name="sunrise">Sunrise</string>
@@ -14,5 +13,6 @@
     <string name="maghrib">Maghrib</string>
     <string name="isha">Isha</string>
     <string name="prayer_times">Prayer Times</string>
+    <string name="kebla">kebla</string>
 
 </resources>

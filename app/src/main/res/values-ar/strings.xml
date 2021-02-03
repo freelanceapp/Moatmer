@@ -5,7 +5,6 @@
     <string name="do_pray">أدي عمرتك</string>
     <string name="with_muammar">مع معتمر </string>
     <string name="azkar">"الأذكار "</string>
-    <string name="kabla">القبلة</string>
     <string name="sebha">السبحة</string>
     <string name="fajr">الفجْر</string>
     <string name="sunrise">"الشروق "</string>
@@ -14,4 +13,5 @@
     <string name="maghrib">المَغرب</string>
     <string name="isha">العِشاء</string>
     <string name="prayer_times">مواقيت الصلاة</string>
+    <string name="kebla">القبلة</string>
 </resources>
