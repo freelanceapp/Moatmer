@@ -1,11 +1,10 @@
-package com.semicode.moatmer;
+package com.semicode.moatmer.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
 import com.semicode.moatmer.databinding.ActivitySplashBinding;
 
@@ -22,7 +21,9 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
 //                TextUtils.isEmpty(userToken)
+
                 if (false) {
+
 //                    Intent mainIntent = new Intent(SplashActivity.this, HomeActivity.class);
 //                    startActivity(mainIntent);
 //                    finish();
