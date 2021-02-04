@@ -1,10 +1,12 @@
 package com.semicode.moatmer.ui;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.semicode.moatmer.data.model.NextPray;
 import com.semicode.moatmer.data.model.prayerTimes.PrayerTimesModel;
 import com.semicode.moatmer.data.model.prayerTimes.Timings;
 import com.semicode.moatmer.databinding.ActivityHomeBinding;
@@ -12,11 +14,21 @@ import com.semicode.moatmer.mvp.homeActivity.ActivityHomePresenter;
 import com.semicode.moatmer.mvp.homeActivity.ActivityHomeView;
 import com.semicode.moatmer.share.HelperMethod;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class HomeActivity extends AppCompatActivity implements ActivityHomeView {
     ActivityHomeBinding binding;
     ActivityHomePresenter presenter;
     Timings timings = new Timings();
-
+    String currentTime;
+    private Date time;
+    String city = "Riyadh", country = "Saudi Arabia";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +45,19 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
         binding.homeLaySebha.setOnClickListener(v -> openSebhaActivity());
         binding.homeLayAzkar.setOnClickListener(v -> openAzkarActivity());
         binding.homeLayKebla.setOnClickListener(v -> openKeblaActivity());
-        presenter = new ActivityHomePresenter(this, this);
+        binding.setCity(city);
+        time = Calendar.getInstance().getTime();
+        currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(time);
+
+
+//        String pattern = "HH:mm";
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+//        try {
+//            date = simpleDateFormat.parse(currentTime);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+        presenter = new ActivityHomePresenter(this, this, city, country);
 
     }
 
@@ -61,7 +85,11 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
     @Override
     public void onGetPrayerTimes(PrayerTimesModel body) {
         timings = body.getData().getTimings();
-        HelperMethod.makeTextToast(this, timings.getDhuhr());
+        NextPray nextPray = NextPray.getNextPray(this, currentTime, body.getData().getTimings());
+
+        binding.setNextPray(nextPray);
+//        HelperMethod.makeTextToast(this, timings.getDhuhr());
+        HelperMethod.makeTextToast(this, body.getData().getMeta().getOffset().getFajr() + "");
 
     }
 

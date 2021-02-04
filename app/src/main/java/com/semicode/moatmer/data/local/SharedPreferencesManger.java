@@ -8,13 +8,12 @@ import com.google.gson.Gson;
 public class SharedPreferencesManger {
 
     public static SharedPreferences sharedPreferences = null;
-    //    public static String API_TOKEN;
-    public final static String USER = "user", PASSWORD = "password", SPLASH = "splash", APITOKEN = "apiToken";
+    public final static String USER = "user", PASSWORD = "password", SPLASH = "splash", APITOKEN = "apiToken", SEBHA = "sebha_number";
 
     public static void setSharedPreferences(Activity activity) {
         if (sharedPreferences == null) {
             sharedPreferences = activity.getSharedPreferences(
-                    "Blood", activity.MODE_PRIVATE);
+                    "Moatmer", activity.MODE_PRIVATE);
         }
     }
 
@@ -23,6 +22,16 @@ public class SharedPreferencesManger {
         if (sharedPreferences != null) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(data_Key, data_Value);
+            editor.commit();
+        } else {
+            setSharedPreferences(activity);
+        }
+    }
+ public static void SaveData(Activity activity, String data_Key, int data_Value) {
+        setSharedPreferences(activity);
+        if (sharedPreferences != null) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt(data_Key, data_Value);
             editor.commit();
         } else {
             setSharedPreferences(activity);
@@ -55,6 +64,12 @@ public class SharedPreferencesManger {
         setSharedPreferences(activity);
 
         return sharedPreferences.getString(data_Key, "");
+    }
+
+    public static int LoadIntData(Activity activity, String data_Key) {
+        setSharedPreferences(activity);
+
+        return sharedPreferences.getInt(data_Key, 0);
     }
 
     public static boolean LoadBoolean(Activity activity, String data_Key) {

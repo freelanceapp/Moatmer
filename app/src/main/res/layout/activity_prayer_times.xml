@@ -6,6 +6,14 @@
     <data>
 
         <variable
+            name="city"
+            type="String" />
+
+        <variable
+            name="nextPray"
+            type="com.semicode.moatmer.data.model.NextPray" />
+
+        <variable
             name="prayerTimes"
             type="com.semicode.moatmer.data.model.prayerTimes.Timings" />
 
@@ -88,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/pray_time"
+                        android:text="@{nextPray.name}"
                         android:textColor="@color/yellow"
                         android:textSize="@dimen/_17sdp"
                         android:textStyle="bold" />
@@ -97,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/pray_time"
+                        android:text="@{city}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_13sdp"
                         app:drawableStartCompat="@drawable/ic_location" />
@@ -126,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="2"
-                        android:text="11:35"
+                        android:text="@{nextPray.time}"
                         android:textColor="@color/yellow"
                         android:textSize="@dimen/_30sdp"
                         android:textStyle="bold" />

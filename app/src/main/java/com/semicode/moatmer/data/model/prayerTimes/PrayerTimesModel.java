@@ -16,7 +16,7 @@ public class PrayerTimesModel implements Serializable
     private String status;
     @SerializedName("data")
     @Expose
-    private Data data;
+    private PrayerTimeData data;
     private final static long serialVersionUID = 8463811461726735549L;
 
     public Integer getCode() {
@@ -35,11 +35,11 @@ public class PrayerTimesModel implements Serializable
         this.status = status;
     }
 
-    public Data getData() {
+    public PrayerTimeData getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(PrayerTimeData data) {
         this.data = data;
     }
 

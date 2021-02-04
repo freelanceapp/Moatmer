@@ -3,10 +3,14 @@ package com.semicode.moatmer.mvp.homeActivity;
 import android.content.Context;
 
 import com.semicode.moatmer.data.api.ApiClient;
+import com.semicode.moatmer.data.model.NextPray;
 import com.semicode.moatmer.data.model.prayerTimes.PrayerTimesModel;
+import com.semicode.moatmer.data.model.prayerTimes.Timings;
 import com.semicode.moatmer.tags.Tags;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,10 +23,10 @@ public class ActivityHomePresenter {
     private ActivityHomeView view;
 
 
-    public ActivityHomePresenter(Context context, ActivityHomeView view) {
+    public ActivityHomePresenter(Context context, ActivityHomeView view,String city ,String country) {
         this.context = context;
         this.view = view;
-        getPrayerTimes("cairo","egypt",5);
+        getPrayerTimes(city,country,5);
 
     }
 
@@ -49,5 +53,8 @@ public class ActivityHomePresenter {
 
     }
 
-
+//   public NextPray getNextPray(Timings timings){
+//       Date currentTime = Calendar.getInstance().getTime();
+//
+//   }
 }

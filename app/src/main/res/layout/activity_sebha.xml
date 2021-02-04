@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="number"
+            type="Integer" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,12 +72,13 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/yellow_strok"
                 android:gravity="center"
-                android:text="45"
+                android:text='@{number+""}'
                 android:textColor="@color/soft_gray_"
                 android:textSize="@dimen/_60sdp" />
         </androidx.cardview.widget.CardView>
 
         <ImageView
+            android:id="@+id/sebha_iv_reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
@@ -82,6 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/sebha_iv_increse"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_150sdp"
             app:cardCornerRadius="@dimen/_75sdp"
