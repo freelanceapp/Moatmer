@@ -33,7 +33,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/prayer_times_iv_back"
+                        android:id="@+id/umrah_request_iv_back"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_back" />
@@ -43,7 +43,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:gravity="center|start"
-                        android:text="@string/azkar"
+                        android:text="@string/umrah_request"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_15sdp" />
 
@@ -54,27 +54,56 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
+            android:id="@+id/search_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/soft_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/_15sdp">
+
+                <EditText
+                    android:id="@+id/umrah_request_et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/search_for_person"
+                    android:padding="@dimen/_5sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/app_bar">
+            app:layout_constraintTop_toBottomOf="@+id/search_lay">
+
             <ProgressBar
-                android:layout_gravity="center"
-                android:id="@+id/loading_progrss"
+                android:id="@+id/umrah_request_loading_progrss"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
 
                 />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/azkar_rv_azkar"
+                android:id="@+id/umrah_request_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/_10sdp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </FrameLayout>
 
 

@@ -30,6 +30,7 @@
         <activity android:name=".ui.SebhaActivity"/>
         <activity android:name=".ui.AzkarActivity"/>
         <activity android:name=".ui.KeblaActivity"/>
+        <activity android:name=".ui.UmrahReguestActivity"/>
 
     </application>
 

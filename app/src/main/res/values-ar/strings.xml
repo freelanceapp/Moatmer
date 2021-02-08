@@ -14,4 +14,8 @@
     <string name="isha">العِشاء</string>
     <string name="prayer_times">مواقيت الصلاة</string>
     <string name="kebla">القبلة</string>
+    <string name="am">صباحاً</string>
+    <string name="pm">مساءً</string>
+    <string name="search_for_person">بحث عن شخص</string>
+    <string name="umrah_request">طلب معتمر</string>
 </resources>

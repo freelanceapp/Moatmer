@@ -1,9 +1,13 @@
 package com.semicode.moatmer.data.api;
 
+import com.semicode.moatmer.data.model.azkar.AzkarModel;
+import com.semicode.moatmer.data.model.kebla.KeblaModel;
+import com.semicode.moatmer.data.model.moatmer.MoatmerModel;
 import com.semicode.moatmer.data.model.prayerTimes.PrayerTimesModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiService {
@@ -12,5 +16,18 @@ public interface ApiService {
             , @Query(value = "country") String country
             , @Query(value = "method") int method
     );
+
+    @GET("qibla")
+    Call<KeblaModel> getKeblaDirection(@Query(value = "latitude") float latitude
+            , @Query(value = "longitude") float longitude
+    );
+
+//    -----------------------------------------------------------------------------------------------
+
+    @GET("remembrances")
+    Call<AzkarModel> getAzkar();
+
+    @POST("searchMoatmers")
+    Call<MoatmerModel> getMoatmer(@Query(value = "search_keyword") String searchKeyword);
 
 }

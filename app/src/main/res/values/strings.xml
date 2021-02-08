@@ -14,5 +14,9 @@
     <string name="isha">Isha</string>
     <string name="prayer_times">Prayer Times</string>
     <string name="kebla">kebla</string>
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="umrah_request">Umrah request</string>
+    <string name="search_for_person">search for person</string>
 
 </resources>

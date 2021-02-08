@@ -114,7 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/pray_time"
+                        android:text="@{nextPray.downTime}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_13sdp" />
 
@@ -144,7 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/pray_time"
+                        android:text="@{nextPray.am_or_pm}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_13sdp" />
 

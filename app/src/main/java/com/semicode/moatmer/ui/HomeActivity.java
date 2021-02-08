@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
         binding.homeLaySebha.setOnClickListener(v -> openSebhaActivity());
         binding.homeLayAzkar.setOnClickListener(v -> openAzkarActivity());
         binding.homeLayKebla.setOnClickListener(v -> openKeblaActivity());
+        binding.homeLayUmrah.setOnClickListener(v -> openUmrahRequestActivity());
         binding.setCity(city);
         time = Calendar.getInstance().getTime();
         currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(time);
@@ -59,6 +60,11 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
 //        }
         presenter = new ActivityHomePresenter(this, this, city, country);
 
+    }
+
+    private void openUmrahRequestActivity() {
+        Intent intent = new Intent(this, UmrahReguestActivity.class);
+        startActivity(intent);
     }
 
     private void openKeblaActivity() {
@@ -85,7 +91,7 @@ public class HomeActivity extends AppCompatActivity implements ActivityHomeView 
     @Override
     public void onGetPrayerTimes(PrayerTimesModel body) {
         timings = body.getData().getTimings();
-        NextPray nextPray = NextPray.getNextPray(this, currentTime, body.getData().getTimings());
+        NextPray nextPray = NextPray.getNextPray(this, "16:00", body.getData().getTimings());
 
         binding.setNextPray(nextPray);
 //        HelperMethod.makeTextToast(this, timings.getDhuhr());
