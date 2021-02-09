@@ -19,7 +19,7 @@ public class MoatmerAdapter extends RecyclerView.Adapter<MoatmerAdapter.MoatmerV
 
     private List<MoatmerModelData> dataList;
     private LayoutInflater mInflater;
-    OnMoatmerClick onMoatmerClick ;
+    OnMoatmerClick onMoatmerClick;
     Context context;
 
     //    -------------   -------------   -------------   -------------   -------------   -------------   -------------
@@ -48,7 +48,7 @@ public class MoatmerAdapter extends RecyclerView.Adapter<MoatmerAdapter.MoatmerV
         moatmerViewHolder.itemView.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                onMoatmerClick.onMoatmerClick(moatmerViewHolder.getAdapterPosition());
+                onMoatmerClick.onMoatmerClick(dataList.get(moatmerViewHolder.getAdapterPosition()).getId());
             }
         });
     }
@@ -71,7 +71,7 @@ public class MoatmerAdapter extends RecyclerView.Adapter<MoatmerAdapter.MoatmerV
     }
 
     public interface OnMoatmerClick {
-        void onMoatmerClick(int position);
+        void onMoatmerClick(int userId);
 
     }
 }

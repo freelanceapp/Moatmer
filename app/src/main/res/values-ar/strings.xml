@@ -18,4 +18,9 @@
     <string name="pm">مساءً</string>
     <string name="search_for_person">بحث عن شخص</string>
     <string name="umrah_request">طلب معتمر</string>
+    <string name="moatmer_details">"تفاصيل المعتمر "</string>
+    <string name="request">"طلب عمرة "</string>
+    <string name="kind">النوع:</string>
+    <string name="age">العمر :</string>
+    <string name="umrat">العمرات :</string>
 </resources>

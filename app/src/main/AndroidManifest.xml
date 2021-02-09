@@ -31,6 +31,7 @@
         <activity android:name=".ui.AzkarActivity"/>
         <activity android:name=".ui.KeblaActivity"/>
         <activity android:name=".ui.UmrahReguestActivity"/>
+        <activity android:name=".ui.moatmerDetails.MoatmerDetailsActivity"/>
 
     </application>
 

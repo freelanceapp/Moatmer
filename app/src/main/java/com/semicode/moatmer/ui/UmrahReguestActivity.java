@@ -1,5 +1,6 @@
 package com.semicode.moatmer.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,20 +8,15 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.semicode.moatmer.adapter.AzkarAdapter;
 import com.semicode.moatmer.adapter.MoatmerAdapter;
-import com.semicode.moatmer.data.model.azkar.AzkarData;
 import com.semicode.moatmer.data.model.moatmer.MoatmerModelData;
-import com.semicode.moatmer.databinding.ActivityAzkarBinding;
 import com.semicode.moatmer.databinding.ActivityUmrahRequestBinding;
 import com.semicode.moatmer.mvp.UmrahRequestActivity.ActivityUmrahRequestPresenter;
 import com.semicode.moatmer.mvp.UmrahRequestActivity.ActivityUmrahRequestView;
-import com.semicode.moatmer.mvp.azkarActivit.ActivityAzkarPresenter;
-import com.semicode.moatmer.mvp.azkarActivit.ActivityAzkarView;
 import com.semicode.moatmer.share.HelperMethod;
+import com.semicode.moatmer.ui.moatmerDetails.MoatmerDetailsActivity;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class UmrahReguestActivity extends AppCompatActivity implements MoatmerAdapter.OnMoatmerClick, ActivityUmrahRequestView {
@@ -68,6 +64,9 @@ public class UmrahReguestActivity extends AppCompatActivity implements MoatmerAd
     @Override
     public void onMoatmerClick(int position) {
         HelperMethod.makeTextToast(this, "you click position :" + position);
+        Intent intent = new Intent(this, MoatmerDetailsActivity.class);
+        intent.putExtra("USER_ID",position);
+        startActivity(intent);
 
     }
 

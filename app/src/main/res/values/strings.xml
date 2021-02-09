@@ -18,5 +18,12 @@
     <string name="pm">pm</string>
     <string name="umrah_request">Umrah request</string>
     <string name="search_for_person">search for person</string>
+    <string name="moatmer_details">Moatmer Details</string>
+    <string name="request">Umrah request</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kind">kind :</string>
+    <string name="age">age :</string>
+    <string name="umrat">Umrat :</string>
+    <string name="rating">Rating</string>
 
 </resources>
