@@ -16,6 +16,8 @@ import androidx.core.content.ContextCompat;
 
 import com.semicode.moatmer.R;
 import com.semicode.moatmer.adapter.ViewPagerWithFragmentAdapter;
+import com.semicode.moatmer.data.model.moatmer.MoatmerData;
+import com.semicode.moatmer.data.model.moatmer.MoatmerModel;
 import com.semicode.moatmer.data.model.moatmer.MoatmerModelData;
 import com.semicode.moatmer.databinding.ActivityKeblaBinding;
 import com.semicode.moatmer.databinding.ActivityMoatmerDetailsBinding;
@@ -71,12 +73,11 @@ public class MoatmerDetailsActivity extends AppCompatActivity implements Activit
 
     }
 
+
     @Override
-    public void onLoadMoatmer(MoatmerModelData moatmerModelData) {
-        binding.setMoatmerModel(moatmerModelData);
-
+    public void onLoadMoatmer(MoatmerData data) {
+        binding.setMoatmerModel(data);
     }
-
     @Override
     public void onFailed(String message) {
         HelperMethod.makeTextToast(this, message);
@@ -92,4 +93,6 @@ public class MoatmerDetailsActivity extends AppCompatActivity implements Activit
         HelperMethod.makeTextToast(this, "on Failure " + message);
 
     }
+
+
 }

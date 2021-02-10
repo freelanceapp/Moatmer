@@ -7,7 +7,7 @@
 
         <variable
             name="moatmerModel"
-            type="com.semicode.moatmer.data.model.moatmer.MoatmerModelData" />
+            type="com.semicode.moatmer.data.model.moatmer.MoatmerData" />
 
     </data>
 
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:text="@{moatmerModel.name}"
+                android:text="@{moatmerModel.user.name}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16sdp" />
 
