@@ -3,6 +3,7 @@ package com.semicode.moatmer.data.api;
 import com.semicode.moatmer.data.model.azkar.AzkarModel;
 import com.semicode.moatmer.data.model.kebla.KeblaModel;
 import com.semicode.moatmer.data.model.moatmer.MoatmerModel;
+import com.semicode.moatmer.data.model.moatmer.MoatmerenModel;
 import com.semicode.moatmer.data.model.prayerTimes.PrayerTimesModel;
 
 import retrofit2.Call;
@@ -28,6 +29,9 @@ public interface ApiService {
     Call<AzkarModel> getAzkar();
 
     @POST("searchMoatmers")
-    Call<MoatmerModel> getMoatmer(@Query(value = "search_keyword") String searchKeyword);
+    Call<MoatmerenModel> getMoatmer(@Query(value = "search_keyword") String searchKeyword);
+
+    @POST("userDetails")
+    Call<MoatmerModel> userDetails(@Query(value = "user_id") int user_id);
 
 }

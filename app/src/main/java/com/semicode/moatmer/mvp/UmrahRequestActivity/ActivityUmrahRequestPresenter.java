@@ -3,8 +3,7 @@ package com.semicode.moatmer.mvp.UmrahRequestActivity;
 import android.content.Context;
 
 import com.semicode.moatmer.data.api.ApiClient;
-import com.semicode.moatmer.data.model.azkar.AzkarModel;
-import com.semicode.moatmer.data.model.moatmer.MoatmerModel;
+import com.semicode.moatmer.data.model.moatmer.MoatmerenModel;
 import com.semicode.moatmer.tags.Tags;
 
 import java.io.IOException;
@@ -28,9 +27,9 @@ public class ActivityUmrahRequestPresenter {
 
     public void getMoatmers(String searchKeyword) {
         view.onload();
-        ApiClient.getApiService(Tags.base_url).getMoatmer(searchKeyword).enqueue(new Callback<MoatmerModel>() {
+        ApiClient.getApiService(Tags.base_url).getMoatmer(searchKeyword).enqueue(new Callback<MoatmerenModel>() {
             @Override
-            public void onResponse(Call<MoatmerModel> call, Response<MoatmerModel> response) {
+            public void onResponse(Call<MoatmerenModel> call, Response<MoatmerenModel> response) {
                 if (response.isSuccessful() && response.body().getData() != null) {
                     view.onLoadMoatmer(response.body().getData());
                 } else {
@@ -44,7 +43,7 @@ public class ActivityUmrahRequestPresenter {
             }
 
             @Override
-            public void onFailure(Call<MoatmerModel> call, Throwable t) {
+            public void onFailure(Call<MoatmerenModel> call, Throwable t) {
                 view.onFailure(t.getMessage());
                 view.onFinish();
             }

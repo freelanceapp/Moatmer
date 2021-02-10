@@ -14,15 +14,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.semicode.moatmer.R;
 import com.semicode.moatmer.adapter.ViewPagerWithFragmentAdapter;
+import com.semicode.moatmer.data.model.moatmer.MoatmerModelData;
 import com.semicode.moatmer.databinding.ActivityKeblaBinding;
 import com.semicode.moatmer.databinding.ActivityMoatmerDetailsBinding;
 import com.semicode.moatmer.mvp.keblaActivit.ActivityKeblaPresenter;
 import com.semicode.moatmer.mvp.keblaActivit.ActivityKeblaView;
+import com.semicode.moatmer.mvp.userDetails.ActivityUserDetailsPresenter;
+import com.semicode.moatmer.mvp.userDetails.ActivityUserDetailsView;
 import com.semicode.moatmer.share.HelperMethod;
 
-public class MoatmerDetailsActivity extends AppCompatActivity {
+import java.util.Objects;
+
+public class MoatmerDetailsActivity extends AppCompatActivity implements ActivityUserDetailsView {
     ActivityMoatmerDetailsBinding binding;
+    ActivityUserDetailsPresenter presenter;
     ViewPagerWithFragmentAdapter adapter;
     int userId;
 
@@ -40,12 +47,17 @@ public class MoatmerDetailsActivity extends AppCompatActivity {
 
     private void init() {
         getDataFromIntent();
+        presenter = new ActivityUserDetailsPresenter(this, this, userId);
         adapter = new ViewPagerWithFragmentAdapter(getSupportFragmentManager());
         binding.viewPager.setAdapter(adapter);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
 
         binding.prayerTimesIvBack.setOnClickListener(v -> onBackPressed());
-
+        setupTabIcons();
+    }
+    private void setupTabIcons() {
+        Objects.requireNonNull(binding.tabLayout.getTabAt(0)).setIcon(R.drawable.ic_hram_gray);
+        binding.tabLayout.getTabAt(1).setIcon(R.drawable.ic_hram_gray);
     }
 
     private void getDataFromIntent() {
@@ -54,4 +66,30 @@ public class MoatmerDetailsActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onLoad() {
+
+    }
+
+    @Override
+    public void onLoadMoatmer(MoatmerModelData moatmerModelData) {
+        binding.setMoatmerModel(moatmerModelData);
+
+    }
+
+    @Override
+    public void onFailed(String message) {
+        HelperMethod.makeTextToast(this, message);
+    }
+
+    @Override
+    public void onFinish() {
+
+    }
+
+    @Override
+    public void onFailure(String message) {
+        HelperMethod.makeTextToast(this, "on Failure " + message);
+
+    }
 }

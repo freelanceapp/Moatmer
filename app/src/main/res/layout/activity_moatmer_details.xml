@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="moatmerModel"
+            type="com.semicode.moatmer.data.model.moatmer.MoatmerModelData" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,10 +87,11 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
 
             <TextView
+                android:id="@+id/tv_moatmer_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:text="@string/pray_time"
+                android:text="@{moatmerModel.name}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16sdp" />
 
@@ -98,10 +103,13 @@
                 app:bgDrawable="@drawable/ic_rating_star_gray"
                 app:starColor="@color/yellow"
                 app:starDrawable="@drawable/ic_rating_bar_star" />
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:tabGravity="center"
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager"
@@ -109,7 +117,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:background="#345" />
+         />
         </LinearLayout>
 
         <FrameLayout
